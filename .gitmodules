@@ -1,0 +1,3 @@
+[submodule "spark-helper"]
+	path = spark-helper
+	url = git@github.com:FH-Potsdam/spark-helper.git
