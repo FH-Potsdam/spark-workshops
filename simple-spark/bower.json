@@ -1,0 +1,22 @@
+{
+  "name": "simple-spark",
+  "version": "0.1.0",
+  "authors": [
+    "fabiantheblind <icke@fabianmoronzirfas.me>"
+  ],
+  "description": "playing with the sparkcore",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "spark": "~0.2.1",
+    "bootstrap": "~3.2.0"
+  }
+}
