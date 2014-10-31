@@ -3,3 +3,5 @@ node_modules
 sftp-config.json
 sketch.properties
 .codekit-cache
+bower_components
+node_modules
