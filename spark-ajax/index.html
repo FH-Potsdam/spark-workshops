@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>spark-ajax</title>
+        <meta name="description" content="an cool thing">
+        <meta name="author" content="fabiantheblind">
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+            <h1 id="count-val"></h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+
+                <form role="form">
+                  <div class="form-group">
+                        <input type="text" id="api-token" class="form-control" placeholder="API token">
+                        <input type="text" id="core-id" class="form-control" placeholder="Core ID">
+
+                        <button type="button" id="count" class="btn btn-default">Count</button>
+                        <button type="button" id="toggle" class="btn btn-default">Toggle</button>
+                  </div>
+                </form>
+                 </div>
+        </div>
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/sisyphus/sisyphus.js"></script>
+        <!-- endbower -->
+        <script type="text/javascript" src="assets/js/main.js"></script>
+    </body>
+</html>

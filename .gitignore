@@ -5,3 +5,5 @@ sketch.properties
 .codekit-cache
 bower_components
 node_modules
+
+private

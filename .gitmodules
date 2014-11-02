@@ -1,3 +1,6 @@
 [submodule "spark-helper"]
 	path = spark-helper
 	url = git@github.com:FH-Potsdam/spark-helper.git
+[submodule "web-interface"]
+	path = web-interface
+	url = git@github.com:FH-Potsdam/spark-web-interface.git
