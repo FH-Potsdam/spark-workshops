@@ -52,36 +52,41 @@ Run the following commands in your terminal:
 For example like this. The counter is a published variable. That is accesable from to the cloud.  
 
 
+
     int toggleBlinking(String command);
     int pin = D7;
     int count = 0;
     boolean blinkit = false;
     
+    
     void setup() {
-    Spark.variable("count",&count, INT);
+      Spark.variable("count",&count, INT);
       Spark.function("blink", toggleBlinking);
     pinMode(pin,OUTPUT);
     }
     
     int toggleBlinking(String command){
-        if(command == "toggle"){
-        blinkit = !blinkit;    
-            return 1;
-        }else{
-            return -1;
-        }
+      if(command == "toggle"){
+        blinkit = !blinkit;
+        return 1;
+      }else{
+        return -1;
+      }
     }
     
     void loop() {
     
       if(blinkit == true){
+        Spark.publish("blinking", "1", 60, PRIVATE);
+    
         digitalWrite(pin,HIGH);
         delay(1000);
+    
         digitalWrite(pin,LOW);
         delay(1000);
+      }else{
       }
-    count++;
-    
+      count++;
     }
 
 
@@ -121,6 +126,38 @@ To get the count value run:
 
     spark monitor 123456789012345678 count
 
+To get the all your events run:  
+
+    spark subscribe mine
+
+Te get a specific event run:  
+
+    # you could also use the core id
+    spark subscribe blinking sergantfuzzyboots  
+
+
+
+###DFU MODE (DEVICE FIRMWARE UPGRADE)
+[source](http://docs.spark.io/connect/#appendix-dfu-mode-device-firmware-upgrade)
+If you are wish to program a Core with a custom firmware via USB, you'll need to use this mode. This mode triggers the on-board bootloader that accepts firmware binary files via the dfu-utility.
+Procedure:  
+
+make sure you have the dfu-utils installed  
+
+    brew install dfu-utils
+
+1. Hold down BOTH buttons
+2. Release only the RST button, while holding down the MODE button.
+3. Wait for the LED to start flashing yellow
+4. Release the MODE button
+
+Compile your local source:  
+
+    spark compile sparkworkshop
+
+Now flash your firmware:  
+
+    spark flash --usb firmware_1415035556019.bin seargantfuzzyboots
 
 ------------
 
