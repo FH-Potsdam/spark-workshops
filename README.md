@@ -151,13 +151,17 @@ make sure you have the dfu-utils installed
 3. Wait for the LED to start flashing yellow
 4. Release the MODE button
 
-Compile your local source:  
+Compile your local source (in the cloud):  
 
-    spark compile sparkworkshop
+    spark compile sparkworkshop_publish
 
-Now flash your firmware:  
+Now flash your firmware (via usb):  
 
     spark flash --usb firmware_1415035556019.bin seargantfuzzyboots
+
+You can also compile in the cloud and flash remotly like this. Then you dont need to send him into Ddfu mode:  
+
+    spark flash sergantfuzzyboots sparkworkshop_publish
 
 ------------
 
