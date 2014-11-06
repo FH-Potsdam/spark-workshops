@@ -9,7 +9,7 @@ ToDos:
 
 - Proof wire less Connection
 - get value to webpage
-- controll from Web Server 
+- controll from Web Server
 - nodejs website Control Core
 
 ### Topics:  
@@ -43,13 +43,15 @@ Run the following commands in your terminal:
 ####claim Core & first Blink  
 
 1. We have 8 cores in the lab. So we asume that on the sparkcore is something  (maybe some code leftovers from another sutdent or he is out of the box) but we don't know what the state is.  
-2. Unbox the core and plug it into your computer with a micro usb cabel.  
-3. Put your core into listenning mode by pressing the mode button for 3 seconds.
-4. Setup your core with wifi credentials and so on. Run `spark setup` in the terminal and follow the instructions. Have your wifi credentials with you. 
+2. Unbox the core and plug it into your computer with a micro usb cabel. One o the cores needs to have its antenna connected. (it is the white one.)  
+3. Put your core into listenning mode by pressing the mode button for 3 seconds. If this does not work try the [factory reset](http://docs.spark.io/connect/#appendix-factory-reset)
+4. Setup your core with wifi credentials and so on. Run `spark setup` in the terminal and follow the instructions. Have your wifi credentials with you. If you run into problems try using the [USB connection version](http://docs.spark.io/connect/#connecting-your-core-connect-over-usb)  
+5. If the core is out of the box there is still ["tinker"](http://docs.spark.io/tinker/) installed. This allows you to talk to pins from your phone or from the commandline. Enter into your Terminal `spark function call YOUR_CORES_NAME digitalWrite "D7/HIGH"` to turn on the build in LED. 
 5. Go to [www.spark.io/build](https://www.spark.io/build) you should be able to see your core under "Cores" on the left hand side at the bottom.  
-6. Congrats start programming your core. 
+6. Congrats start programming your core.
 
 For example like this. The counter is a published variable. That is accesable from to the cloud.  
+
 
 
 
@@ -57,35 +59,33 @@ For example like this. The counter is a published variable. That is accesable fr
     int pin = D7;
     int count = 0;
     boolean blinkit = false;
-    
-    
+
+
     void setup() {
       Spark.variable("count",&count, INT);
       Spark.function("blink", toggleBlinking);
-    pinMode(pin,OUTPUT);
+      Spark.publish("blinking", "0", 60, PRIVATE);
+
+      pinMode(pin,OUTPUT);
     }
-    
+
     int toggleBlinking(String command){
       if(command == "toggle"){
         blinkit = !blinkit;
+        Spark.publish("blinking", blinkit == true ? "1" : "0",60,PRIVATE);
+        if(blinkit == true){
+            digitalWrite(pin,HIGH);
+        }else{
+            digitalWrite(pin,LOW);
+        }
         return 1;
       }else{
+
         return -1;
       }
     }
-    
+
     void loop() {
-    
-      if(blinkit == true){
-        Spark.publish("blinking", "1", 60, PRIVATE);
-    
-        digitalWrite(pin,HIGH);
-        delay(1000);
-    
-        digitalWrite(pin,LOW);
-        delay(1000);
-      }else{
-      }
       count++;
     }
 
@@ -98,7 +98,7 @@ Login and enter your ID and API token.
 - Enter as "Function Name" "blink" and as "data" "toggle" and  hit post.
 - Get the value of the `count` variable.  
 
-You can also access these infos from the command line 
+You can also access these infos from the command line
 
 In the terminal run:  
 
@@ -109,14 +109,14 @@ Now you can see the progress of count.
 This will list all functions
 
     spark function list
-    
+
 Result is something like this:  
 
     Listfunctions called
     polling server to see what cores are online, and what functions are available
     Retrieving cores... (this might take a few seconds)
     sergantfuzzyboots (123456789012345678) has 1 functions
-      int blink(String args) 
+      int blink(String args)
 
 To call the blink function run (with your core id of course):  
 
@@ -175,5 +175,3 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
 
 see also http://www.opensource.org/licenses/mit-license.php
-
-
