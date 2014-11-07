@@ -43,10 +43,16 @@ else
   npm install -g spark-cli
 fi
 
+echo "Cloning Workshop repo"
 git clone https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop.git
+echo "cd into it"
 cd 2014-2015-WiSe-spark-core-workshop
+echo "init submodules"
 git submodule init && git submodule update
-
+echo "init node_modules & bower_components"
+cd spark-ajax; npm install && bower install
+cd ..
+cd spark-client-side; npm install && bower install
 # for D in *; do [ -d "${D}" ] && installnpmbower "${D}"; done
 }
 
