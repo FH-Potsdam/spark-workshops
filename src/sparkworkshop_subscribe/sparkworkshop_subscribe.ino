@@ -8,12 +8,10 @@ void toggleLed(const char *event, const char *data){
   if (strcmp(data, "1") == 0){
     digitalWrite(pin,HIGH);
     state = 1;
-    delay(100);
   }
   else if(strcmp(data, "0") == 0){
     digitalWrite(pin,LOW);
     state = 0;
-    delay(100);
   }
 }
 
