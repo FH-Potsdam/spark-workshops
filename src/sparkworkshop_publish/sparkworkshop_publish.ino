@@ -34,6 +34,6 @@ int toggleBlinking(String command){
 void loop() {
     if(millis() > update){
       update+= millis();
-      count++;
     }
+      count++;
 }
