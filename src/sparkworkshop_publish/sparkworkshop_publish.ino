@@ -18,9 +18,11 @@ int toggleBlinking(String command){
     blinkit = !blinkit;
     if(blinkit == true){
         digitalWrite(pin,HIGH);
-    }else{
+        Spark.publish("fhpid", (blinkit == true) ? "1" : "0");
 
+    }else{
         digitalWrite(pin,LOW);
+        Spark.publish("fhpid", (blinkit == true) ? "1" : "0");
     }
     return 1;
   }else{
@@ -31,8 +33,7 @@ int toggleBlinking(String command){
 
 void loop() {
     if(millis() > update){
-        update+= millis();
-        Spark.publish("fhpid", (blinkit == true) ? "1" : "0");
+      update+= millis();
+      count++;
     }
-    count++;
 }
