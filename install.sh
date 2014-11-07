@@ -43,6 +43,10 @@ else
   npm install -g spark-cli
 fi
 
+git clone https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop.git
+cd 2014-2015-WiSe-spark-core-workshop
+git submodule init && git submodule update
+
 # for D in *; do [ -d "${D}" ] && installnpmbower "${D}"; done
 }
 
