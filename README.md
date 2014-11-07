@@ -3,18 +3,20 @@ Sparkcore workshop
 
 This is a code repository for the spark core workshop in winter semster 2014/2015 FH-Potsdam University of Applied Sciences Potsdam (Germany)  
 
-ToDos:  
-- what's Spark Core?  
-- what is nodejs?  
+###Contents   
 
-- Proof wire less Connection
-- get value to webpage
-- controll from Web Server
-- nodejs website Control Core
+*web examples*  
 
-### Topics:  
+- spark-ajax 
+- spark-client-side
+- spark-helper
+- web-interface  
 
-#### prerequisites  
+*firmware examples*
+
+- src 
+
+### prerequisites  
 - Get a spark [account](https://www.spark.io/signup)  
 - Install [node.js](http://nodejs.org/)  
 
@@ -39,57 +41,34 @@ Run the following commands in your terminal:
     npm install -g spark-cli  
     spark cloud login  
 
+For some of the examples ([spark-client-side](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-client-side) & [spark-ajax](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-ajax)) you also will need to have [bower](http://bower.io/) installed.  
 
-####claim Core & first Blink  
+    npm install -g bower
+
+###claim Core & first Blink  
 
 1. We have 8 cores in the lab. So we asume that on the sparkcore is something  (maybe some code leftovers from another sutdent or he is out of the box) but we don't know what the state is.  
 2. Unbox the core and plug it into your computer with a micro usb cabel. One o the cores needs to have its antenna connected. (it is the white one.)  
 3. Put your core into listenning mode by pressing the mode button for 3 seconds. If this does not work try the [factory reset](http://docs.spark.io/connect/#appendix-factory-reset)
 4. Setup your core with wifi credentials and so on. Run `spark setup` in the terminal and follow the instructions. Have your wifi credentials with you. If you run into problems try using the [USB connection version](http://docs.spark.io/connect/#connecting-your-core-connect-over-usb)  
 5. If the core is out of the box there is still ["tinker"](http://docs.spark.io/tinker/) installed. This allows you to talk to pins from your phone or from the commandline. Enter into your Terminal `spark function call YOUR_CORES_NAME digitalWrite "D7/HIGH"` to turn on the build in LED. 
-5. Go to [www.spark.io/build](https://www.spark.io/build) you should be able to see your core under "Cores" on the left hand side at the bottom.  
-6. Congrats start programming your core.
+6. Go to [www.spark.io/build](https://www.spark.io/build) you should be able to see your core under "Cores" on the left hand side at the bottom.  
+7. Congrats start programming your core.
 
-For example like this. The counter is a published variable. That is accesable from to the cloud.  
+### Deeper usage  
 
+This repo has two firmware examples:  
 
+1. sparkworkshop_publish  
+2. sparkworkshop_subscribe  
 
+You could set up two sparkcores with each one having one of the examples.  
 
-    int toggleBlinking(String command);
-    int pin = D7;
-    int count = 0;
-    boolean blinkit = false;
+There are:  
 
-
-    void setup() {
-      Spark.variable("count",&count, INT);
-      Spark.function("blink", toggleBlinking);
-      Spark.publish("blinking", "0", 60, PRIVATE);
-
-      pinMode(pin,OUTPUT);
-    }
-
-    int toggleBlinking(String command){
-      if(command == "toggle"){
-        blinkit = !blinkit;
-        Spark.publish("blinking", blinkit == true ? "1" : "0",60,PRIVATE);
-        if(blinkit == true){
-            digitalWrite(pin,HIGH);
-        }else{
-            digitalWrite(pin,LOW);
-        }
-        return 1;
-      }else{
-
-        return -1;
-      }
-    }
-
-    void loop() {
-      count++;
-    }
-
-
+- 2 Variables (one from each core)  
+- 1 Function (from the publish core)  
+- 1 Event (also from the publish core)  
 
 Get Your API token and your core ID from [www.spark.io/build](https://www.spark.io/build) and go to [interface.fh-potsdam.de/spark-core/helper](http://interface.fh-potsdam.de/spark-core/helper/). You will get the login credentials in the workshop. If your not part of the workshop. Get the web interface and install it on your own server. I recommend [uberspace.de](https://uberspace.de/).  
 
@@ -153,7 +132,7 @@ make sure you have the dfu-utils installed
 
 Compile your local source (in the cloud):  
 
-    spark compile sparkworkshop_publish
+    spark compile src/sparkworkshop_publish
 
 Now flash your firmware (via usb):  
 
@@ -161,7 +140,7 @@ Now flash your firmware (via usb):
 
 You can also compile in the cloud and flash remotly like this. Then you dont need to send him into Ddfu mode:  
 
-    spark flash sergantfuzzyboots sparkworkshop_publish
+    spark flash sergantfuzzyboots src/sparkworkshop_publish
 
 ------------
 

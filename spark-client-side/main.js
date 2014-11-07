@@ -2,7 +2,9 @@
 //
 // - login
 //
-
+var error = function(err) {
+      console.log('API call failed: ', err);
+    };
 var callback = function(err, body) {
   console.log('API call login completed on callback:', body);
   var devicesPr = spark.getAttributesForAll();
@@ -11,7 +13,7 @@ var callback = function(err, body) {
     function(data) {
       console.log('Core attrs retrieved successfully:', data);
       if (data.length > 0) {
-        var a_core = data[0];
+        var a_core = data[2];
         console.log('This is the first registerd device', a_core);
         console.log('Device name: ' + a_core.name);
         console.log('- connected?: ' + a_core.connected);
@@ -37,26 +39,13 @@ var callback = function(err, body) {
             console.log('Core attr retrieved successfully:', data);
           }
         });
-        //
-        // a_core.callFunction('blink', 'toggle', function(err, data) {
-        //   if (err) {
-        //     console.log('An error occurred:', err);
-        //   } else {
-        //     console.log('Function called succesfully:', data);
-        //   }
-        // });
       }
-    },
-    function(err) {
-      console.log('API call failed: ', err);
-    }
-  );
+    },error());
 };
-
 
 spark.login({
   username: 'moron-zirfas@fh-potsdam.de',
-  password: 'TzHXidrCKPVNga7C'
+  password: '123456'
 }, callback);
 
 

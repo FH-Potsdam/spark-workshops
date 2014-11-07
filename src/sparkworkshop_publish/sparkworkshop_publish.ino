@@ -2,7 +2,7 @@ int toggleBlinking(String command);
 int pin = D7;
 int count = 0;
 boolean blinkit = false;
-int update = 1000;
+int update = 5000;
 
 void setup() {
   Spark.variable("count",&count, INT);
