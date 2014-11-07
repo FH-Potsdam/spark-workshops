@@ -19,5 +19,8 @@
     "Gruntfile.js",
     "package.json",
     "grunt"
-  ]
+  ],
+  "resolutions": {
+    "jquery": "~2.1.1"
+  }
 }
