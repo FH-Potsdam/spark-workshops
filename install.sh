@@ -43,6 +43,13 @@ else
   npm install -g spark-cli
 fi
 
+if hash http-server 2>/dev/null; then
+  echo "http-server is installed"
+else
+  echo "instaling http-server"
+  npm install http-server -g
+fi
+
 echo "Cloning Workshop repo"
 git clone https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop.git
 echo "cd into it"

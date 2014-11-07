@@ -1,17 +1,19 @@
 # spark-ajax
 
-an cool thing
+calling your sparkcore with ajax
 
 ## Getting Started
-Download the [production version][here].
 
-[min]: https://github.com/fabiantheblind/2014-2015-WiSe-spark-core-workshop
+uses AJAX needs http-server if you run it localy.  
 
-## Documentation
-_(Coming soon)_
+run:  
 
-## Examples
-_(Coming soon)_
+    npm install && bower install
 
-## Release History
-_(Nothing yet)_
+the run:  
+
+    http-server
+
+and go to [http://0.0.0.0:8080/](http://0.0.0.0:8080/)  
+
+

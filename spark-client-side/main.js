@@ -43,10 +43,11 @@ var callback = function(err, body) {
     },error());
 };
 
-spark.login({
-  username: 'moron-zirfas@fh-potsdam.de',
-  password: '123456'
-}, callback);
+$.getJSON("private", function (obj) {
+// console.log(obj);
+spark.login(obj, callback);
+
+});
 
 
 
