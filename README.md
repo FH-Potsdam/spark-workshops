@@ -71,7 +71,7 @@ Run the following commands in your terminal:
 
     npm install -g spark-cli  
 
-For some of the examples ([spark-client-side](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-client-side) & [spark-ajax](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-ajax)) you also will need to have [bower](http://bower.io/) and [Grunt.js](http://gruntjs.com/) installed.  
+For some of the examples ([spark-client-side](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-client-side) & [spark-ajax](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-ajax)) you also will need to have [bower](http://bower.io/) and [Grunt.js](http://gruntjs.com/) installed and you need to use the http-server.  
 
     npm install -g bower
     npm install -g grunt-cli
@@ -83,7 +83,7 @@ Now login into the spark cloud.
 
 ###claim Core & first Blink  
 
-1. We have 8 cores in the lab. So we asume that on the sparkcore is something  (maybe some code leftovers from another sutdent or he is out of the box) but we don't know what the state is.  
+1. We have 8 cores in the lab. So we asume that on the sparkcore is something  (maybe some code leftovers from another students or he is out of the box) but we don't know what the state is. If you run into the message that the core is claimed by someone else please give me a heads up. The person who had the core before needs to unclaim it.  
 2. Unbox the core and plug it into your computer with a micro usb cabel. One o the cores needs to have its antenna connected. (it is the white one.)  
 3. Put your core into listenning mode by pressing the mode button for 3 seconds. If this does not work try the [factory reset](http://docs.spark.io/connect/#appendix-factory-reset)
 4. Setup your core with wifi credentials and so on. Run `spark setup` in the terminal and follow the instructions. Have your wifi credentials with you. If you run into problems try using the [USB connection version](http://docs.spark.io/connect/#connecting-your-core-connect-over-usb)  

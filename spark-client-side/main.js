@@ -40,7 +40,7 @@ var callback = function(err, body) {
           }
         });
       }
-    },error());
+    },error);
 };
 
 $.getJSON("private", function (obj) {

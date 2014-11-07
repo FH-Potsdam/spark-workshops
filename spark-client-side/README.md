@@ -6,7 +6,7 @@ Unfortunately it thorws an error when trying to get a variable. :-(
 
 ####This uses AJAX. So it needs http-server if you run it localy.  
 
-create a file next to yout "main.js" file called "private" and add your credentials in there like this:  
+create next to your "main.js" a file called "private" and add your credentials in there like this:  
 
     {
       "username":"you@example.me",
@@ -17,7 +17,7 @@ run:
 
     npm install && bower install
 
-the run:  
+then run:  
 
     http-server  
 
