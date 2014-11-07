@@ -53,6 +53,7 @@ echo "init node_modules & bower_components"
 cd spark-ajax; npm install && bower install
 cd ..
 cd spark-client-side; npm install && bower install
+echo "I am done thanks for your patience"
 # for D in *; do [ -d "${D}" ] && installnpmbower "${D}"; done
 }
 
