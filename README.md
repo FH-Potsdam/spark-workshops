@@ -41,9 +41,10 @@ Run the following commands in your terminal:
     npm install -g spark-cli  
     spark cloud login  
 
-For some of the examples ([spark-client-side](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-client-side) & [spark-ajax](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-ajax)) you also will need to have [bower](http://bower.io/) installed.  
+For some of the examples ([spark-client-side](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-client-side) & [spark-ajax](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-ajax)) you also will need to have [bower](http://bower.io/) and [Grunt.js](http://gruntjs.com/) installed.  
 
     npm install -g bower
+    npm install -g grunt-cli
 
 ###claim Core & first Blink  
 

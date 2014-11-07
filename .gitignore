@@ -7,3 +7,4 @@ bower_components
 node_modules
 firmware*
 private
+npm-debug.log
