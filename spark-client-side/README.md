@@ -19,6 +19,6 @@ run:
 
 the run:  
 
-    http-server
+    http-server  
 
 and go to [http://0.0.0.0:8080/](http://0.0.0.0:8080/)  

@@ -7,20 +7,51 @@ This is a code repository for the spark core workshop in winter semster 2014/201
 
 *web examples*  
 
-- spark-ajax 
-- spark-client-side
-- spark-helper
-- web-interface  
+####spark-ajax  
+
+Use ajax to make a call to the spark API  
+
+####spark-client-side  
+
+This is an example that uses the client side library  
+
+
+####spark-helper by jflasher 
+
+See [this repo](https://github.com/jflasher/spark-helper) for further infos. An elaborated example also using ajax.  
+
+####web-interface by suda  
+
+See this repo for further infos. An more simple but still great example to use the Spark API.  
+
+see it here [suda.github.io/spark-web-interface/](http://suda.github.io/spark-web-interface/) or here [fh-potsdam.github.io/spark-web-interface/](http://fh-potsdam.github.io/spark-web-interface/).  
 
 *firmware examples*
 
-- src 
+####src/sparkworkshop_publish  
+
+A simple application that has a function a variable and a publish event.  
+
+####src/sparkworkshop_subscribe  
+
+A simple application that has a variable and a subscribe event.  
 
 ### prerequisites  
-- Get a spark [account](https://www.spark.io/signup)  
-- Install [node.js](http://nodejs.org/)  
 
-On Mac OSX the esiest whay is using [homebrew](http://brew.sh/).  
+- Get a spark [account](https://www.spark.io/signup)  
+
+####Automated install:  
+
+This will install all dependencies, clone the repo, init all submodules and install all npm modules and bower components. You always should read scripts like this before using them see the source here: https://raw.githubusercontent.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/master/install.sh  
+
+Run in terminal:  
+
+    cd ~/Desktop
+    curl -L https://raw.githubusercontent.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/master/install.sh | sh
+
+####Manual install  
+
+On Mac OSX the easiest whay is using [homebrew](http://brew.sh/).  
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
 
@@ -39,12 +70,16 @@ Then:
 Run the following commands in your terminal:  
 
     npm install -g spark-cli  
-    spark cloud login  
 
 For some of the examples ([spark-client-side](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-client-side) & [spark-ajax](https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/tree/master/spark-ajax)) you also will need to have [bower](http://bower.io/) and [Grunt.js](http://gruntjs.com/) installed.  
 
     npm install -g bower
     npm install -g grunt-cli
+    npm install -g http-server
+
+Now login into the spark cloud.
+
+    spark cloud login  
 
 ###claim Core & first Blink  
 
@@ -113,7 +148,7 @@ To get the all your events run:
 Te get a specific event run:  
 
     # you could also use the core id
-    spark subscribe blinking sergantfuzzyboots  
+    spark subscribe fhpid sergantfuzzyboots  
 
 
 
@@ -143,6 +178,7 @@ You can also compile in the cloud and flash remotly like this. Then you dont nee
 
     spark flash sergantfuzzyboots src/sparkworkshop_publish
 
+See the keynotes for more infos
 ------------
 
 
