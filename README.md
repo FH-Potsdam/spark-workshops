@@ -1,7 +1,7 @@
 Sparkcore workshop  
 ==================
 
-This is a code repository for the spark core workshop in winter semster 2014/2015 FH-Potsdam University of Applied Sciences Potsdam (Germany)  
+This is a code repository for the spark core workshop that took place at [IXDS](http://www.ixds.com/) on 2014.11.07 in winter semster 2014/2015 FH-Potsdam University of Applied Sciences Potsdam (Germany)  
 
 ###Contents   
 
