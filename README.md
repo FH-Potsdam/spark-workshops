@@ -193,6 +193,13 @@ See the keynotes for more infos
 
 This is a simple webinterface for interaction with sparkcores [github.com/FH-Potsdam/spark-helper](https://github.com/FH-Potsdam/spark-helper) see it in action here [id.fhp.de/spark-core/helper](http://interface.fh-potsdam.de/spark-core/helper/)  
 
+
+### Thanks to:  
+
+- [@edgarsilva](https://github.com/edgarsilva)  
+- [@jflasher](https://github.com/jflasher)  
+- [@suda](https://github.com/suda)  
+
 ##License  
 
 Copyright (c) 2014 Fabian "fabiantheblind" Morón Zirfas & FH-Potsdam  
