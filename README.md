@@ -187,13 +187,6 @@ You can also compile in the cloud and flash remotly like this. Then you dont nee
 See the keynotes for more infos
 ------------
 
-
-
-### Links:  
-
-This is a simple webinterface for interaction with sparkcores [github.com/FH-Potsdam/spark-helper](https://github.com/FH-Potsdam/spark-helper) see it in action here [id.fhp.de/spark-core/helper](http://interface.fh-potsdam.de/spark-core/helper/)  
-
-
 ### Thanks to:  
 
 - [@edgarsilva](https://github.com/edgarsilva)  
