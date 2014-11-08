@@ -1,0 +1,17 @@
+html, body, .container {
+    height: 100%;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+}
+.container {
+    display: table;
+    vertical-align: middle;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#target{
+  text-align: center;
+}

@@ -1,19 +1,17 @@
 // I think I need to
-//
-// - login
-//
 var error = function(err) {
       console.log('API call failed: ', err);
     };
+
 var callback = function(err, body) {
   console.log('API call login completed on callback:', body);
-  var devicesPr = spark.getAttributesForAll();
+  var devicesPr = spark.listDevices();
 
   devicesPr.then(
     function(data) {
       console.log('Core attrs retrieved successfully:', data);
       if (data.length > 0) {
-        var a_core = data[2];
+        var a_core = data[0];
         console.log('This is the first registerd device', a_core);
         console.log('Device name: ' + a_core.name);
         console.log('- connected?: ' + a_core.connected);
@@ -21,9 +19,10 @@ var callback = function(err, body) {
         console.log('- functions: ' + a_core.functions);
         console.log('- version: ' + a_core.version);
         console.log('- requires upgrade?: ' + a_core.requiresUpgrade);
-        // works until here
 
-        // this produces an error
+        // now it works. Thanks to edgarsilva
+        // https://github.com/edgarsilva
+        // https://github.com/spark/sparkjs/issues/34
         a_core.getAttributes(function(err, data) {
           if (err) {
             console.log('An error occurred while getting device attrs:', err);
@@ -31,14 +30,19 @@ var callback = function(err, body) {
             console.log('Device attrs retrieved successfully:', data);
           }
         });
-        // this produces an error as well
+        // needs the example src/sparkworkshop_publish/sparkworkshop_publish.ino
+        //
+        // https://github.com/FH-Potsdam/2014-2015-WiSe-spark-core-workshop/blob/master/src/sparkworkshop_publish/sparkworkshop_publish.ino
+        setInterval(function() {
         a_core.getVariable('count', function(err, data) {
           if (err) {
             console.log('An error occurred while getting attrs:', err);
           } else {
             console.log('Core attr retrieved successfully:', data);
+         $( "#target" ).html( "<h1>My name is \"" + a_core.name + "\" and I'm at count</h1><h2>"+ data.result +"</h2>");
           }
         });
+      }, 1000);
       }
     },error);
 };
