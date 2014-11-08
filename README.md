@@ -22,11 +22,11 @@ This is an example that uses the client side library (also using a bit of ajax).
 
 Then execute the "http-server" and go to [http://0.0.0.0:8080/](http://0.0.0.0:8080/)  
 
-####spark-helper by @jflasher 
+####spark-helper by [@jflasher](https://github.com/jflasher) 
 
 See [this repo](https://github.com/jflasher/spark-helper) for further infos. An elaborated example also using ajax.  
 
-####web-interface by @suda  
+####web-interface by [@suda](https://github.com/suda)  
 
 See this repo for further infos. An more simple but still great example to use the Spark API.  
 
