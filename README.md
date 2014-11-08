@@ -13,7 +13,12 @@ Use ajax to make a call to the spark API
 
 ####spark-client-side  
 
-This is an example that uses the client side library  
+This is an example that uses the client side library (also using a bit of ajax). To get this working create a file called "private" with your credentials next to the "main.js". Like this:  
+
+    {
+      "username":"you@example.me",
+      "password":"superdupersecret"
+    }
 
 
 ####spark-helper by jflasher 
