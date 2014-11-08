@@ -187,6 +187,12 @@ You can also compile in the cloud and flash remotly like this. Then you dont nee
 See the keynotes for more infos
 ------------
 
+
+###To Dos:  
+
+- Sparkjs server side example  
+- setup own spark cloud  
+
 ### Thanks to:  
 
 - [@edgarsilva](https://github.com/edgarsilva)  
