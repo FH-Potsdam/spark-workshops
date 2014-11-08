@@ -1,8 +1,6 @@
 Spark Client Side
 =================
 
-This is a tryout to use the Spark Core Javascript SDK.
-Unfortunately it thorws an error when trying to get a variable. :-(  
 
 ####This uses AJAX. So it needs http-server if you run it localy.  
 
@@ -22,3 +20,7 @@ then run:
     http-server  
 
 and go to [http://0.0.0.0:8080/](http://0.0.0.0:8080/)  
+
+![](screen.png)  
+
+Thanks to [@edgarsilva](https://github.com/edgarsilva). See the [issue](https://github.com/spark/sparkjs/issues/34).  
