@@ -4,7 +4,7 @@ Sparkcore workshop
 This is a code repository for the spark workshops @ University of Applied Sciences Potsdam (Germany)
 - First one took place at [IXDS](http://www.ixds.com/) on 2014.11.07 in winter semster 2014/2015 
 - Second one took place at the interface lab on 2015.03.19 as part of the [Microsoft Research Design Expo seminar](https://incom.org/workspace/5808)  
-
+<!-- 
 ###Contents   
 
 *web examples*  
@@ -194,7 +194,7 @@ See the keynotes for more infos
 
 - Sparkjs server side example  
 - setup own spark cloud  
-
+ -->
 ### Thanks to:  
 
 - [@edgarsilva](https://github.com/edgarsilva)  
