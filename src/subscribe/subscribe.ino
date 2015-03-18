@@ -31,5 +31,5 @@ pinMode(pin, OUTPUT);
 }
 
 void loop() {
+  /* nothing to see here */
 }
-

@@ -1,16 +1,13 @@
+
 int pin = D7;
-int count = 0;
 boolean blinkit = false;
 int update = 5000;
 
 int toggleBlinking(String command);
 
 void setup() {
-  Spark.variable("count",&count, INT);
   Spark.function("blink", toggleBlinking);
-
   Spark.publish("fhpid", "1", 60, PRIVATE);
-
   pinMode(pin,OUTPUT);
 
 }
@@ -37,8 +34,5 @@ int toggleBlinking(String command){
 }
 
 void loop() {
-    if(millis() > update){
-      update+= millis();
-    }
-      count++;
+/*nothing to see here*/
 }
