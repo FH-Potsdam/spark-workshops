@@ -1,15 +1,15 @@
 // simple sketch that shows how to
 // publish a function to the cloud
 
-int pin = D7;
+int pin = D7; // the pin to toggle
 
-boolean blinkit = false;
+boolean blinkit = false; // to see if it is on or of
 
-int toggleBlinking(String command);
+int toggleBlinking(String command); // declare the function C++ style
 
 void setup(){
-  pinMode(pin,OUTPUT);
-  Spark.function("blink", toggleBlinking);
+  pinMode(pin,OUTPUT);// define the pin as output
+  Spark.function("blink", toggleBlinking);// publish the function
 }
 
 void loop(){
@@ -19,6 +19,11 @@ void loop(){
   */
 }
 
+/**
+ * this is a function you can call from the cloud
+ * @param  {String} String command  This can be some value you send to the function
+ * @return {int} returns 1 if everything whent fine -1 if the command did not match
+ */
 int toggleBlinking(String command){
 
   if(command == "toggle"){
