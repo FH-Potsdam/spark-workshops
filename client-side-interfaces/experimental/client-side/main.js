@@ -40,6 +40,8 @@ var callback = function(err, body) {
           } else {
             console.log('Core attr retrieved successfully:', data);
          $( "#target" ).html( "<h1>My name is \"" + a_core.name + "\" and I'm at count</h1><h2>"+ data.result +"</h2>");
+             $("body").css("background-color", "rgb(255," + data.result + ",255)");
+
           }
         });
       }, 1000);
